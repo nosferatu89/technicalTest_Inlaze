@@ -17,14 +17,15 @@ class LoginUser {
         await this.inputPass.sendKeys(password);
     }
 
-    async isSubmitButtonEnabled() {
+    async ButtonEnabled() {
         const element = await this.btnLogin;
         const isEnabled = await element.isEnabled();
-        return isEnabled;
-    }
+        const message = isEnabled ? '[INF]      El botón de envío está habilitado' : '[INF]      El botón de envío está deshabilitado';
+        return message;
+      }
 
     async clickSubmit() {
-        const isEnabled = await this.isSubmitButtonEnabled();
+        const isEnabled = await this.ButtonEnabled();
         if (isEnabled) {
             await this.btnLogin.click();
         } else {
@@ -32,8 +33,5 @@ class LoginUser {
         }
     }
 }
-
-module.exports = { LoginUser };
-
 
 module.exports = { LoginUser };

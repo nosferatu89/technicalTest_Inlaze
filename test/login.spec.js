@@ -9,14 +9,17 @@ async function LoginSuccess() {
     try {
 
         await driver.get(enviromentUrl.qaUrl);
-        console.log('[Sta]:     Ingresando a ' + enviromentUrl.qaUrl)
+        console.log('[INF]     Ingresando a ' + enviromentUrl.qaUrl)
 
         let loginUser = new LoginUser(driver);
         
+        console.log(await loginUser.ButtonEnabled());
         await loginUser.enterUsername(varUSer.user);
-        console.log('[Inf]:     Usuario: ' + varUSer.user)
+        console.log('[INF]     Usuario: ' + varUSer.user)
+        console.log(await loginUser.ButtonEnabled());
         await loginUser.enterPassword(varUSer.pass);
-        console.log('[Inf]:     Usuario: ' + varUSer.pass)
+        console.log('[INF]     Usuario: ' + varUSer.pass)
+        console.log(await loginUser.ButtonEnabled());
         await loginUser.clickSubmit();
         
         // Pausa para observar el navegador antes de cerrar
