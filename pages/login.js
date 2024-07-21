@@ -20,7 +20,7 @@ class LoginUser {
     async ButtonEnabled() {
         const element = await this.btnLogin;
         const isEnabled = await element.isEnabled();
-        const message = isEnabled ? '[INF]      El botón de envío está habilitado' : '[INF]      El botón de envío está deshabilitado';
+        const message = isEnabled ? '👣[INF]      * El botón de envío está habilitado' : '🟡[INF]      * El botón de envío está deshabilitado';
         return message;
       }
 
@@ -29,10 +29,10 @@ class LoginUser {
         if (isEnabled) {
             await this.btnLogin.click();
         } else {
-            throw new Error('Submit button is not enabled');
+            throw new Error('☠︎[ERR]Submit button is not enabled');
         }
         await new Promise(resolve => setTimeout(resolve, 3000));
-        console.log('Esperado 5 segundos después del clic');
+        console.log('👣[INF]      Esperado 5 segundos después del clic');
     }
 }
 
