@@ -1,11 +1,12 @@
 const { Builder, By, Key } = require('selenium-webdriver');
 require('chromedriver');
 const { LoginUser } = require('../pages/login');
+const {Logout} = require('../pages/home')
 const { varUSer, enviromentUrl } = require('../properties');
 
 async function LoginSuccess() {
     let driver = await new Builder().forBrowser('chrome').build();
-
+    console.log('[TITLE]        TestCase - LoginSuccess')
     try {
 
         await driver.get(enviromentUrl.qaUrl);
@@ -18,16 +19,17 @@ async function LoginSuccess() {
         console.log('[INF]     Usuario: ' + varUSer.user)
         console.log(await loginUser.ButtonEnabled());
         await loginUser.enterPassword(varUSer.pass);
-        console.log('[INF]     Usuario: ' + varUSer.pass)
+        console.log('[INF]     Pass: ' + varUSer.pass)
         console.log(await loginUser.ButtonEnabled());
         await loginUser.clickSubmit();
-        
-        // Pausa para observar el navegador antes de cerrar
-        await new Promise(resolve => setTimeout(resolve, 10000));
+
+        let logoutUser = new Logout(driver);
+        await logoutUser.logoutSesion()
+                
+        await new Promise(resolve => setTimeout(resolve, 5000));
     } finally {
-        await driver.quit(); // Asegúrate de cerrar el navegador incluso si hay errores
+        await driver.quit(); 
         console.log('[END]:     Se finaliza proceso de Login')
     }
 }
-
 LoginSuccess();

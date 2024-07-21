@@ -31,6 +31,8 @@ class LoginUser {
         } else {
             throw new Error('Submit button is not enabled');
         }
+        await new Promise(resolve => setTimeout(resolve, 3000));
+        console.log('Esperado 5 segundos después del clic');
     }
 }
 
