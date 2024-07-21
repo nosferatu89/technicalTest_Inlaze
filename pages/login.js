@@ -10,6 +10,7 @@ class LoginUser {
 
     async enterUsername(username) {
         await this.inputEmail.sendKeys(username);
+
     }
 
     async enterPassword(password) {
