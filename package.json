@@ -1,0 +1,20 @@
+{
+  "name": "technicaltestinlaze",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha technicalTest_Inlaze/test/*spec.js --no-timeouts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^10.7.0",
+    "selenium-webdriver": "^4.23.0",
+    "webdriver-manager": "^12.1.9"
+  },
+  "devDependencies": {
+    "chromedriver": "^126.0.5"
+  }
+}
