@@ -51,17 +51,7 @@ async function RegisterUsers() {
         await signIn.typePass1(password);
         await signIn.typePass2(password);
         await signIn.clickSubmit()
-        // Validar el mensaje de error de la contraseña
-        //const expectedErrorMessage = "⚠️[INF]   Los password no son iguales.";
-        //await signIn.validatePasswordErrorMessage(expectedErrorMessage);
-          
-
-        // Ingresar la contraseña correcta en el campo de confirmación
-        //await signIn.typePass2(password);
-
-        // Finalizar el flujo de registro
-        //await signIn.clickSubmit();
-
+       
         console.log('👣[INF]      Registro de usuario completado con éxito');
 
         await new Promise(resolve => setTimeout(resolve, 5000));
