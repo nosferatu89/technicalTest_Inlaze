@@ -5,6 +5,7 @@ class LoginUser {
         this.driver = driver;
         this.inputEmail = driver.findElement(By.id('email'));
         this.inputPass = driver.findElement(By.css('.w-full > #password'));
+        this.lblValidaPass = driver.findElement(By.css('.w-full > #password'));
         this.btnLogin = driver.findElement(By.css('button[type="submit"]'));
     }
 

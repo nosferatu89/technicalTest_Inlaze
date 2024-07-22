@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@faker-js/faker": "^8.4.1",
     "mocha": "^10.7.0",
     "selenium-webdriver": "^4.23.0",
     "webdriver-manager": "^12.1.9"
